@@ -1,0 +1,23 @@
+.headerBox {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
+    width: 100%;
+    height: 62px;
+    background: #C7C7C7;
+  }
+
+  .headerFontContainer {
+    display: flex;
+    justify-content: center; 
+    align-items: center;   
+    grid-column: 1;  
+    height: 100%;
+  }
+
+  .headerFont {
+    color: #000;
+    text-align: center;
+    font-style: normal;
+    font-weight: 600;
+  }
