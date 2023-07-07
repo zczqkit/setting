@@ -1,6 +1,6 @@
 import React from 'react';
 import './Header.css';
-import SideMenu from './SideMenu';
+import SideMenu_Step1 from './SideMenu_Step1';
 import { Grid,Typography} from '@mui/material';
 
 function Header() {
@@ -14,7 +14,7 @@ function Header() {
           </Typography>
         </Grid>
       </Grid>
-      <SideMenu/>
+      <SideMenu_Step1/>
     </div>
   );
 }
