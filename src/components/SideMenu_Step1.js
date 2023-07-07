@@ -31,15 +31,11 @@ const styles = {
     alignItems: 'center',
     margin: '0.15rem 0 1rem',
   },
-  iconContainer: {
-    display: 'flex',
-    flexDirection: 'column',
-  },
 };
 
 function Sidemenu() {
   return (
-    <Grid container item xs={3} sx={styles.sideMenuBox}>
+    <Grid container item xs={12} sx={styles.sideMenuBox}>
       <Grid item xs={3}>
         <DottedLineWithCircles />
       </Grid>
