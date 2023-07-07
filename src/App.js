@@ -1,9 +1,11 @@
 import About from './screens/About'
+import Control from './screens/Control'
 
 function App() {
   return (
     <div>
-      <About/>
+      {/* <About/> */}
+      <Control/>
     </div>
   );
 }
