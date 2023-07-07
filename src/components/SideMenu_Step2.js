@@ -31,7 +31,7 @@ const styles = {
     fontFamily: 'Segoe UI',
     display: 'flex',
     alignItems: 'center',
-    margin: '0.15rem 0 1rem',
+    margin: '0.65rem 0 1rem',
   },
 };
 
@@ -60,7 +60,7 @@ export default Sidemenu;
 
 function DottedLineWithCircles() {
   return (
-    <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+    <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center',marginTop:'0.5rem'}}>
       <CheckCircleIcon sx={{ height: '2rem', width: '2rem', margin: '0.2rem 0 0 0', color: '#13A10E' }} />
       <div style={{ width: '2px', height: '1.3rem', background: 'black' }}></div>
       <CircleOutlinedIcon sx={{ height: '2rem', width: '2rem', margin: '0 0 0 0', color: '#5B5FC7' }} />
