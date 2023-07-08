@@ -6,6 +6,7 @@ import './About.css';
 import { Box,Grid,Typography,Button} from '@mui/material';
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+import {Link} from 'react-router-dom';
 
 
 function About() {
@@ -40,17 +41,23 @@ function About() {
       fontFamily: 'Segoe UI',
       margin:"0.5rem 0.5rem"
     },
-    button:{
+    buttonPosition:{
+      width: "35rem",
+      display: 'flex', 
+      flexDirection: 'row' , 
+      marginTop:"2rem"
+      },
+    primebutton:{
       backgroundColor:"#5B5FC7",
       color:"white",
       textTransform: "none",
       borderRadius:'1rem',
-      margin:'3rem 0 0 27rem',
+      margin:'0 0 0 0rem',
       fontSize: '1.5rem', 
       padding: '1rem', 
       height: '3rem',  
       width: '8rem'  
-    }
+    },
   };
 
   const description = "tsed ullamcorper morbi tincidunt ornare massa eget egestas purus viverra accumsan in nisl nisi scelerisque eu ultrices vitae auctor eu"
@@ -67,9 +74,15 @@ function About() {
             {description}
           </Typography>
         </Box>
-        <Button size="large" sx={styles.button}>
-          Next<ChevronRightIcon sx={{margin:'0 0 0 0.5rem', padding:"0"}}/>
-        </Button>
+        <Box sx={styles.buttonPosition}>
+          <Grid item xs={6}>
+          </Grid>
+          <Grid item xs={6} sx={{ display: 'flex', justifyContent: 'flex-end' }}>
+            <Link to="/Control"><Button size="large" sx={styles.primebutton}>
+              Next<ChevronRightIcon sx={{margin:'0 0 0 0.5rem', padding:"0"}}/>
+            </Button></Link>
+          </Grid>
+        </Box>
       </Box>
     );
 }

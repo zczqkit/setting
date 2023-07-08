@@ -3,6 +3,7 @@ import Header from '../components/Header';
 import SideMenu_Step2 from '../components/SideMenu_Step2';
 import Switches from '../components/Switches';
 import './Control.css';
+import {Link} from 'react-router-dom';
 import { Box,Grid,Typography,Button,Switch,FormControl,FormControlLabel} from '@mui/material';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
@@ -182,14 +183,14 @@ function Control() {
         </Box>
         <Box sx={styles.buttonPosition}>
           <Grid item xs={6}>
-            <Button size="large"  variant="outlined" sx={styles.secondbutton}>
+            <Link to="/"><Button size="large"  variant="outlined" sx={styles.secondbutton}>
             <ChevronLeftIcon sx={{margin:'0 0.5rem 0 0', padding:"0"}}/>Back
-            </Button>
+            </Button></Link>
           </Grid>
           <Grid item xs={6} sx={{ display: 'flex', justifyContent: 'flex-end' }}>
-            <Button size="large" sx={styles.primebutton}>
+            <Link to="/"><Button size="large" sx={styles.primebutton}>
               Next<ChevronRightIcon sx={{margin:'0 0 0 0.5rem', padding:"0"}}/>
-            </Button>
+            </Button></Link>
           </Grid>
         </Box>
       </Box>

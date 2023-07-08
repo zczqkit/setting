@@ -1,12 +1,15 @@
 import About from './screens/About'
 import Control from './screens/Control'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
-    <div>
-      {/* <About/> */}
-      <Control/>
-    </div>
+  <Router>
+    <Routes>
+      <Route path="/" element={ <About/>} />
+      <Route path="/Control" element={ <Control/>} />
+    </Routes>
+  </Router>
   );
 }
 
