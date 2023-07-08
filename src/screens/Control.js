@@ -131,7 +131,6 @@ function Control() {
         <Typography sx={styles.menuText}>
           How to play ?
         </Typography>
-        {/* <Box className="textbox" sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-around'}} > */}
         <Box className="textbox" sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-around'}}  >
           <Grid container item xs={12} >
             <Grid item xs={3} sx={styles.iconPosition}>

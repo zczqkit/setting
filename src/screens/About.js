@@ -1,7 +1,9 @@
 import React from 'react';
 import Header from '../components/Header';
 import SideMenu_Step1 from '../components/SideMenu_Step1';
-import logo from '../components/flappy-bird-logo.png';
+import motionInputLogo from '../components/motioninput.jpg';
+import uclLogo from '../components/ucl_logo.svg';
+import logo from '../components/logo.png';
 import './About.css';
 import { Box,Grid,Typography,Button} from '@mui/material';
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
@@ -34,13 +36,14 @@ function About() {
       fontFamily: 'Segoe UI',
       display: 'flex',
       alignItems: 'center',
-      margin: '0 0 1rem 0',
+      margin: '0 0 4.5rem 0',
     },
     description: {
       fontSize: '1.5rem',
       fontFamily: 'Segoe UI',
       margin:"0.5rem 0.5rem"
     },
+
     buttonPosition:{
       width: "35rem",
       display: 'flex', 
@@ -60,7 +63,7 @@ function About() {
     },
   };
 
-  const description = "tsed ullamcorper morbi tincidunt ornare massa eget egestas purus viverra accumsan in nisl nisi scelerisque eu ultrices vitae auctor eu"
+  // <img src={logo} alt="logo" className="logo"/>
 
   function HomeBody() {
     return (
@@ -68,12 +71,23 @@ function About() {
         <Typography sx={styles.menuItem}>
           <InfoOutlinedIcon sx={styles.menuIcon} />About
         </Typography>
-        <img src={logo} alt="logo" className="logo"/>
-        <Box className="textbox">
-          <Typography  sx={styles.description}>
-            {description}
-          </Typography>
+        <Box className="textbox" sx={{ display: 'flex',flexDirection: 'row'}}>
+          <Grid item xs={6} sx={{ display: 'flex',flexDirection: 'row', justifyContent: 'center', alignItems: 'center'}}>
+          <img src={motionInputLogo} alt="logo" className="logo"style={{height:'15rem',width:'15rem'}}/>
+          </Grid>
+          <Grid item xs={6} sx={{ position: 'relative', display: 'flex',flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
+              <Typography sx={{fontSize: '1.5rem',fontFamily: 'Segoe UI',}}>Set up, dive into fun!<br /> <br />
+              With MotionInput, by waving or jumping,<br />you can explore a new world of gaming!
+              </Typography>
+              <Box sx={{position: 'absolute', right: '14.5rem', bottom: '0.3rem'}}>
+              <img src={uclLogo} alt="logo" style={{height:'1.5rem',width:'5rem',margin:'0 0'}}/>
+              </Box>
+              <Box sx={{position: 'absolute', right: 0, bottom: 0}}>
+              <img src={logo} alt="logo" style={{height:'2rem',width:'14.5rem',margin:'0 0'}}/>
+              </Box>
+          </Grid>
         </Box>
+        
         <Box sx={styles.buttonPosition}>
           <Grid item xs={6}>
           </Grid>

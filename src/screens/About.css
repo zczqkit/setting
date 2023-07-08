@@ -1,8 +1,3 @@
-.logo {
-    height: 10rem;
-    width: 30rem;
-    margin: 3rem 0 5rem 0;
-  }
 .Homebody{
     display: flex;
     flex-direction: column;
@@ -11,7 +6,7 @@
     height: 100vh;
 }
 .textbox{
-    height: 12rem;
+    height: 25rem;
     width: 35rem;
     border-radius: 20px;
     border: 1px solid #000;
