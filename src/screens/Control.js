@@ -5,6 +5,7 @@ import Switches from '../components/Switches';
 import './Control.css';
 import { Box,Grid,Typography,Button,Switch,FormControl,FormControlLabel} from '@mui/material';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import SportsEsportsOutlinedIcon from '@mui/icons-material/SportsEsportsOutlined';
 import MouseOutlinedIcon from '@mui/icons-material/MouseOutlined';
 import KeyboardOutlinedIcon from '@mui/icons-material/KeyboardOutlined';
@@ -77,18 +78,36 @@ function Control() {
         alignItems: 'center',
         margin: '0 2rem 0 0',
     },
-    buttonPosition:{
+    togglebuttonPosition:{
       display: 'flex',
       flexDirection: 'row', 
       justifyContent: 'center', 
       alignItems: 'center',
       },
-    button:{
+    buttonPosition:{
+      width: "35rem",
+      display: 'flex', 
+      flexDirection: 'row' , 
+      marginTop:"2rem"
+      },
+    primebutton:{
       backgroundColor:"#5B5FC7",
       color:"white",
       textTransform: "none",
       borderRadius:'1rem',
-      margin:'3rem 0 0 27rem',
+      margin:'0 0 0 0rem',
+      fontSize: '1.5rem', 
+      padding: '1rem', 
+      height: '3rem',  
+      width: '8rem'  
+    },
+    secondbutton:{
+      backgroundColor:"white",
+      color:"black",
+      textTransform: "none",
+      borderColor:"#E0E0E0",
+      borderRadius:'1rem',
+      margin:'0 0 0 0rem',
       fontSize: '1.5rem', 
       padding: '1rem', 
       height: '3rem',  
@@ -120,7 +139,7 @@ function Control() {
             <Grid item xs={5} sx={styles.textPosition}>
                 <Typography  sx={styles.description}>Mouse</Typography>
             </Grid>
-            <Grid item xs={4} sx={styles.buttonPosition}>
+            <Grid item xs={4} sx={styles.togglebuttonPosition}>
                 <Typography  sx={styles.label}>OFF</Typography>
                 <FormControlLabel control={<Switch />}/> 
                 <Typography  sx={styles.label}>ON</Typography>
@@ -131,7 +150,7 @@ function Control() {
             <Grid item xs={5} sx={styles.textPosition}>
               <Typography  sx={styles.description}>Keyboard</Typography>
             </Grid>
-            <Grid item xs={4} sx={styles.buttonPosition}>
+            <Grid item xs={4} sx={styles.togglebuttonPosition}>
               <Typography  sx={styles.label}>OFF</Typography>
                 <FormControlLabel control={<Switch />}/> 
                 <Typography  sx={styles.label}>ON</Typography>
@@ -144,7 +163,7 @@ function Control() {
                 Motion Input
               </Typography>
             </Grid>
-            <Grid item xs={4} sx={styles.buttonPosition}><Typography  sx={styles.label}>OFF</Typography>
+            <Grid item xs={4} sx={styles.togglebuttonPosition}><Typography  sx={styles.label}>OFF</Typography>
                     <FormControlLabel control={<Switch />}/> 
                     <Typography  sx={styles.label}>ON</Typography></Grid>
             </Grid>
@@ -161,9 +180,18 @@ function Control() {
               </Grid>
             </Box>
         </Box>
-        <Button size="large" sx={styles.button}>
-          Next<ChevronRightIcon sx={{margin:'0 0 0 0.5rem', padding:"0"}}/>
-        </Button>
+        <Box sx={styles.buttonPosition}>
+          <Grid item xs={6}>
+            <Button size="large"  variant="outlined" sx={styles.secondbutton}>
+            <ChevronLeftIcon sx={{margin:'0 0.5rem 0 0', padding:"0"}}/>Back
+            </Button>
+          </Grid>
+          <Grid item xs={6} sx={{ display: 'flex', justifyContent: 'flex-end' }}>
+            <Button size="large" sx={styles.primebutton}>
+              Next<ChevronRightIcon sx={{margin:'0 0 0 0.5rem', padding:"0"}}/>
+            </Button>
+          </Grid>
+        </Box>
       </Box>
     );
 }
