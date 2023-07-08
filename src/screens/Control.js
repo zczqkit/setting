@@ -1,9 +1,13 @@
-import React from 'react';
+import React,{ useState }from 'react';
 import Header from '../components/Header';
 import SideMenu_Step2 from '../components/SideMenu_Step2';
 import Switches from '../components/Switches';
 import './Control.css';
 import {Link} from 'react-router-dom';
+import Dialog from '@mui/material/Dialog';
+import DialogTitle from '@mui/material/DialogTitle';
+import DialogContent from '@mui/material/DialogContent';
+import DialogActions from '@mui/material/DialogActions';
 import { Box,Grid,Typography,Button,Switch,FormControl,FormControlLabel} from '@mui/material';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
@@ -123,6 +127,33 @@ function Control() {
   };
 
   function HomeBody() {
+  // スイッチの状態を管理するための state
+  const [isSwitchOn, setSwitchOn] = useState(false);
+
+  // Dialog の開閉状態を管理するための state
+  const [open, setOpen] = useState(false);
+
+  // スイッチが切り替えられたときのハンドラ
+  const handleSwitchChange = (event) => {
+    setSwitchOn(event.target.checked);
+
+    // スイッチが ON になったとき、Dialog を開く
+    if (event.target.checked) {
+      setOpen(true);
+    }
+  };
+
+  // 「はい」ボタンが押されたときのハンドラ
+  const handleYesClick = () => {
+    setOpen(false);
+  };
+
+  // 「いいえ」ボタンが押されたときのハンドラ
+  const handleNoClick = () => {
+    setOpen(false);
+    setSwitchOn(false);  // スイッチを OFF に戻す
+  };
+
     return (
       <Box className="Homebody">
         <Typography sx={styles.menuItem}>
@@ -141,7 +172,7 @@ function Control() {
             </Grid>
             <Grid item xs={4} sx={styles.togglebuttonPosition}>
                 <Typography  sx={styles.label}>OFF</Typography>
-                <FormControlLabel control={<Switch />}/> 
+                <FormControlLabel control={<Switch checked={isSwitchOn} onChange={handleSwitchChange} />}/> 
                 <Typography  sx={styles.label}>ON</Typography>
             </Grid>
             <Grid item xs={3} sx={styles.iconPosition}>
@@ -179,6 +210,20 @@ function Control() {
               <Grid item xs={4}>
               </Grid>
             </Box>
+            <Dialog open={open} onClose={handleNoClick}>
+        <DialogTitle>{"注意"}</DialogTitle>
+        <DialogContent>
+          <Typography>設定の注意事項がここに表示されます。</Typography>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleYesClick} color="primary">
+            はい
+          </Button>
+          <Button onClick={handleNoClick} color="primary">
+            いいえ
+          </Button>
+        </DialogActions>
+      </Dialog>
         </Box>
         <Box sx={styles.buttonPosition}>
           <Grid item xs={6}>
