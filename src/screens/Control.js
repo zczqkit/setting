@@ -9,6 +9,7 @@ import SportsEsportsOutlinedIcon from '@mui/icons-material/SportsEsportsOutlined
 import MouseOutlinedIcon from '@mui/icons-material/MouseOutlined';
 import KeyboardOutlinedIcon from '@mui/icons-material/KeyboardOutlined';
 import SportsMartialArtsOutlinedIcon from '@mui/icons-material/SportsMartialArtsOutlined';
+import HelpOutlineOutlinedIcon from '@mui/icons-material/HelpOutlineOutlined';
 import DirectionsRunOutlinedIcon from '@mui/icons-material/DirectionsRunOutlined';
 
 
@@ -44,12 +45,25 @@ function Control() {
         fontFamily: 'Segoe UI',
         display: 'flex',
         alignItems: 'center',
-        margin: '0 0 1rem 0',
+        margin: '0 0 0.5rem 0',
+      },
+    iconPosition:{
+      display: 'flex',
+      flexDirection: 'row', 
+      justifyContent: 'center', 
+      alignItems: 'center',
       },
     menuIcon: {
         fontSize: '2.5rem', 
         margin: '0 0 0 0',
       },
+
+    textPosition:{
+        display: 'flex',
+        flexDirection: 'row',  
+        alignItems: 'center'
+      },  
+
     description: {
         fontSize: '2rem',
         fontFamily: 'Segoe UI', 
@@ -57,12 +71,18 @@ function Control() {
         alignItems: 'center',
     },
     label: {
-        fontSize: '1.2rem',
+        fontSize: '1rem',
         fontFamily: 'Segoe UI', 
         display: 'flex',
         alignItems: 'center',
         margin: '0 2rem 0 0',
     },
+    buttonPosition:{
+      display: 'flex',
+      flexDirection: 'row', 
+      justifyContent: 'center', 
+      alignItems: 'center',
+      },
     button:{
       backgroundColor:"#5B5FC7",
       color:"white",
@@ -73,7 +93,13 @@ function Control() {
       padding: '1rem', 
       height: '3rem',  
       width: '8rem'  
-    }
+    },
+    helpPosition:{
+      display: 'flex',
+      flexDirection: 'row', 
+      justifyContent: 'center', 
+      alignItems: 'center',
+      }
   };
 
   function HomeBody() {
@@ -87,37 +113,45 @@ function Control() {
         </Typography>
         {/* <Box className="textbox" sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-around'}} > */}
         <Box className="textbox" sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-around'}}  >
-            <Grid container item xs={12} >
-            <Grid item xs={4} sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-around'}}>
+          <Grid container item xs={12} >
+            <Grid item xs={4} sx={styles.iconPosition}>
                 <MouseOutlinedIcon sx={styles.menuIcon} />
             </Grid>
-            <Grid item xs={4}>
+            <Grid item xs={4} sx={styles.textPosition}>
                 <Typography  sx={styles.description}>Mouse</Typography>
             </Grid>
-            <Grid item xs={4} sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-around'}}>
+            <Grid item xs={4} sx={styles.buttonPosition}>
                 <Typography  sx={styles.label}>OFF</Typography>
                 <FormControlLabel control={<Switch />}/> 
                 <Typography  sx={styles.label}>ON</Typography>
             </Grid>
-            <Grid item xs={4} sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-around'}}>
+            <Grid item xs={4} sx={styles.iconPosition}>
                 <KeyboardOutlinedIcon sx={styles.menuIcon} />   
             </Grid>
-          <Grid item xs={4}>
-            <Typography  sx={styles.description}>Keyboard</Typography>
+            <Grid item xs={4} sx={styles.textPosition}>
+              <Typography  sx={styles.description}>Keyboard</Typography>
             </Grid>
-          <Grid item xs={4} sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-around'}}>
-          <Typography  sx={styles.label}>OFF</Typography>
+            <Grid item xs={4} sx={styles.buttonPosition}>
+              <Typography  sx={styles.label}>OFF</Typography>
                 <FormControlLabel control={<Switch />}/> 
                 <Typography  sx={styles.label}>ON</Typography>
-          </Grid>
-          <Grid item xs={4} sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-around'}}>
-          <SportsMartialArtsOutlinedIcon sx={styles.menuIcon} />
             </Grid>
-          <Grid item xs={4}><Typography  sx={styles.description}>Motion Input</Typography></Grid>
-          <Grid item xs={4} sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-around'}}><Typography  sx={styles.label}>OFF</Typography>
+            <Grid item xs={4} sx={styles.iconPosition}>
+              <SportsMartialArtsOutlinedIcon sx={styles.menuIcon} />
+            </Grid>
+            <Grid item xs={4} sx={styles.textPosition}>
+              <Typography  sx={styles.description}>
+                Motion Input
+              </Typography>
+            </Grid>
+            <Grid item xs={4} sx={styles.buttonPosition}><Typography  sx={styles.label}>OFF</Typography>
                     <FormControlLabel control={<Switch />}/> 
                     <Typography  sx={styles.label}>ON</Typography></Grid>
             </Grid>
+            <Typography sx={styles.helpPosition}>
+              <HelpOutlineOutlinedIcon/> 
+              What is Motion Input ?
+            </Typography>
         </Box>
         <Button size="large" sx={styles.button}>
           Next<ChevronRightIcon sx={{margin:'0 0 0 0.5rem', padding:"0"}}/>
