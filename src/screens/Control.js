@@ -97,8 +97,8 @@ function Control() {
     helpPosition:{
       display: 'flex',
       flexDirection: 'row', 
-      justifyContent: 'center', 
       alignItems: 'center',
+      margin:'0 0 0.5rem 0',
       }
   };
 
@@ -114,10 +114,10 @@ function Control() {
         {/* <Box className="textbox" sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-around'}} > */}
         <Box className="textbox" sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-around'}}  >
           <Grid container item xs={12} >
-            <Grid item xs={4} sx={styles.iconPosition}>
+            <Grid item xs={3} sx={styles.iconPosition}>
                 <MouseOutlinedIcon sx={styles.menuIcon} />
             </Grid>
-            <Grid item xs={4} sx={styles.textPosition}>
+            <Grid item xs={5} sx={styles.textPosition}>
                 <Typography  sx={styles.description}>Mouse</Typography>
             </Grid>
             <Grid item xs={4} sx={styles.buttonPosition}>
@@ -125,10 +125,10 @@ function Control() {
                 <FormControlLabel control={<Switch />}/> 
                 <Typography  sx={styles.label}>ON</Typography>
             </Grid>
-            <Grid item xs={4} sx={styles.iconPosition}>
+            <Grid item xs={3} sx={styles.iconPosition}>
                 <KeyboardOutlinedIcon sx={styles.menuIcon} />   
             </Grid>
-            <Grid item xs={4} sx={styles.textPosition}>
+            <Grid item xs={5} sx={styles.textPosition}>
               <Typography  sx={styles.description}>Keyboard</Typography>
             </Grid>
             <Grid item xs={4} sx={styles.buttonPosition}>
@@ -136,10 +136,10 @@ function Control() {
                 <FormControlLabel control={<Switch />}/> 
                 <Typography  sx={styles.label}>ON</Typography>
             </Grid>
-            <Grid item xs={4} sx={styles.iconPosition}>
+            <Grid item xs={3} sx={styles.iconPosition}>
               <SportsMartialArtsOutlinedIcon sx={styles.menuIcon} />
             </Grid>
-            <Grid item xs={4} sx={styles.textPosition}>
+            <Grid item xs={5} sx={styles.textPosition}>
               <Typography  sx={styles.description}>
                 Motion Input
               </Typography>
@@ -148,10 +148,18 @@ function Control() {
                     <FormControlLabel control={<Switch />}/> 
                     <Typography  sx={styles.label}>ON</Typography></Grid>
             </Grid>
-            <Typography sx={styles.helpPosition}>
-              <HelpOutlineOutlinedIcon/> 
-              What is Motion Input ?
-            </Typography>
+            <Box sx={{ display: 'flex', flexDirection: 'row'}} >
+              <Grid item xs={3}>
+              </Grid>
+              <Grid item xs={5}>
+                <Typography sx={styles.helpPosition}>
+                  <HelpOutlineOutlinedIcon/> 
+                  What is Motion Input ?
+                </Typography>
+              </Grid>
+              <Grid item xs={4}>
+              </Grid>
+            </Box>
         </Box>
         <Button size="large" sx={styles.button}>
           Next<ChevronRightIcon sx={{margin:'0 0 0 0.5rem', padding:"0"}}/>
