@@ -5,7 +5,6 @@ import Switches from '../components/Switches';
 import './Control.css';
 import {Link} from 'react-router-dom';
 import Dialog from '@mui/material/Dialog';
-import DialogTitle from '@mui/material/DialogTitle';
 import DialogContent from '@mui/material/DialogContent';
 import DialogActions from '@mui/material/DialogActions';
 import { Box,Grid,Typography,Button,Switch,FormControl,FormControlLabel} from '@mui/material';
@@ -17,6 +16,9 @@ import KeyboardOutlinedIcon from '@mui/icons-material/KeyboardOutlined';
 import SportsMartialArtsOutlinedIcon from '@mui/icons-material/SportsMartialArtsOutlined';
 import HelpOutlineOutlinedIcon from '@mui/icons-material/HelpOutlineOutlined';
 import DirectionsRunOutlinedIcon from '@mui/icons-material/DirectionsRunOutlined';
+import MouseInsructionGif from '../components/mouseInstruction.gif';
+import KeyboardInsructionGif from '../components/keyboardInstruction.gif';
+import MotionInputInsructionGif from '../components/motionInputInstruction.gif';
 
 
 function Control() {
@@ -211,7 +213,7 @@ function Control() {
             </Grid>
             <Grid item xs={4} sx={styles.togglebuttonPosition}>
               <Typography  sx={styles.label}>OFF</Typography>
-                <FormControlLabel control={<Switch checked={isKeyboardSwitchOn} onChange={(e) => handleSwitchChange(e, setKeyboardSwitchOn, 'Keyboard switch message', 'keyboard')} />}/> 
+                <FormControlLabel control={<Switch checked={isKeyboardSwitchOn} onChange={(e) => handleSwitchChange(e, setKeyboardSwitchOn, <KeyboardInstruction/>, 'keyboard')} />}/> 
                 <Typography  sx={styles.label}>ON</Typography>
             </Grid>
             <Grid item xs={3} sx={styles.iconPosition}>
@@ -223,17 +225,19 @@ function Control() {
               </Typography>
             </Grid>
             <Grid item xs={4} sx={styles.togglebuttonPosition}><Typography  sx={styles.label}>OFF</Typography>
-                    <FormControlLabel control={<Switch checked={isMotionSwitchOn} onChange={(e) => handleSwitchChange(e, setMotionSwitchOn, 'Motion switch message', 'motion')}  />}/> 
+                    <FormControlLabel control={<Switch checked={isMotionSwitchOn} onChange={(e) => handleSwitchChange(e, setMotionSwitchOn, <MotionInputInstruction/>, 'motion')}  />}/> 
                     <Typography  sx={styles.label}>ON</Typography></Grid>
             </Grid>
             <Box sx={{ display: 'flex', flexDirection: 'row'}} >
               <Grid item xs={3}>
               </Grid>
               <Grid item xs={5}>
+              <Button style={{textTransform: 'none'}}>
                 <Typography sx={styles.helpPosition}>
                   <HelpOutlineOutlinedIcon/> 
-                  What is Motion Input ?
+                  What is MotionInput ?
                 </Typography>
+              </Button>
               </Grid>
               <Grid item xs={4}>
               </Grid>
@@ -285,19 +289,62 @@ function Control() {
 function MouseInstruction() {
   return (
     <Box sx={{width:'35rem'}}>
-      <Typography sx={{ display: 'flex',flexDirection: 'row', justifyContent: 'center',fontSize: '2rem',fontFamily: 'Segoe UI'}} >
+      <Typography sx={{ display: 'flex',flexDirection: 'row', justifyContent: 'center',fontSize: '1.5rem',fontFamily: 'Segoe UI'}} >
       Right-click and the bird jumps
       </Typography>
-      <Box  sx={{display: 'flex',flexDirection: 'row'}}>
-          <Grid item xs={6} sx={{ display: 'flex',flexDirection: 'row', justifyContent: 'center', alignItems: 'center'}}>
-            test left
-          </Grid>
-          <Grid item xs={6} sx={{ position: 'relative', display: 'flex',flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
-            test right
-          </Grid>
+      <Box  sx={{display: 'flex',flexDirection: 'row',justifyContent: 'center',margin:'1rem 0'}}>
+        <img src={MouseInsructionGif} alt="gif"/>
       </Box>
       <Typography sx={{ display: 'flex',flexDirection: 'row', justifyContent: 'center',fontSize: '1.5rem',fontFamily: 'Segoe UI'}} >
         Do you use  Mouse?
+      </Typography>
+    </Box>
+  );
+}
+
+function KeyboardInstruction() {
+  return (
+    <Box sx={{width:'35rem'}}>
+      <Typography sx={{ display: 'flex',flexDirection: 'row', justifyContent: 'center',fontSize: '1.5rem',fontFamily: 'Segoe UI'}} >
+      Click on space bottom and the bird jumps
+      </Typography>
+      <Box  sx={{display: 'flex',flexDirection: 'row',justifyContent: 'center',margin:'1rem 0'}}>
+        <img src={KeyboardInsructionGif} alt="gif"/>
+      </Box>
+      <Typography sx={{ display: 'flex',flexDirection: 'row', justifyContent: 'center',fontSize: '1.5rem',fontFamily: 'Segoe UI'}} >
+        Do you use  Keyboard?
+      </Typography>
+    </Box>
+  );
+}
+
+function MotionInputInstruction() {
+  return (
+    <Box sx={{width:'35rem'}}>
+      <Typography sx={{ display: 'flex',flexDirection: 'row', justifyContent: 'center',fontSize: '1.5rem',fontFamily: 'Segoe UI'}} >
+      Move your arms up and down and the bird jumps
+      </Typography>
+      <Box  sx={{display: 'flex',flexDirection: 'row',justifyContent: 'center',margin:'1rem 0'}}>
+        <img src={MotionInputInsructionGif} alt="gif"/>
+      </Box>
+      <Typography sx={{ display: 'flex',flexDirection: 'row', justifyContent: 'center',fontSize: '1.5rem',fontFamily: 'Segoe UI'}} >
+        Do you use  MotionInput?
+      </Typography>
+    </Box>
+  );
+}
+
+function WhatIsMotionInput() {
+  return (
+    <Box sx={{width:'35rem'}}>
+      <Typography sx={{ display: 'flex',flexDirection: 'row', justifyContent: 'center',fontSize: '1.5rem',fontFamily: 'Segoe UI'}} >
+      What is MotionInput
+      </Typography>
+      <Box  sx={{display: 'flex',flexDirection: 'row',justifyContent: 'center',margin:'1rem 0'}}>
+        <img src={MotionInputInsructionGif} alt="gif"/>
+      </Box>
+      <Typography sx={{ display: 'flex',flexDirection: 'row', justifyContent: 'center',fontSize: '1.5rem',fontFamily: 'Segoe UI'}} >
+        Do you use  MotionInput?
       </Typography>
     </Box>
   );
