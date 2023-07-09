@@ -95,8 +95,19 @@ function Control() {
       flexDirection: 'row' , 
       marginTop:"2rem"
       },
-    primebutton:{
+    primebuttonactive:{
       backgroundColor:"#5B5FC7",
+      color:"white",
+      textTransform: "none",
+      borderRadius:'1rem',
+      margin:'0 0 0 0rem',
+      fontSize: '1.5rem', 
+      padding: '1rem', 
+      height: '3rem',  
+      width: '8rem'  
+    },
+    primebuttondisabled:{
+      backgroundColor:"white",
       color:"white",
       textTransform: "none",
       borderRadius:'1rem',
@@ -110,7 +121,7 @@ function Control() {
       backgroundColor:"white",
       color:"black",
       textTransform: "none",
-      borderColor:"#E0E0E0",
+      borderColor:"black",
       borderRadius:'1rem',
       margin:'0 0 0 0rem',
       fontSize: '1.5rem', 
@@ -127,32 +138,49 @@ function Control() {
   };
 
   function HomeBody() {
-  // スイッチの状態を管理するための state
-  const [isSwitchOn, setSwitchOn] = useState(false);
-
-  // Dialog の開閉状態を管理するための state
-  const [open, setOpen] = useState(false);
-
-  // スイッチが切り替えられたときのハンドラ
-  const handleSwitchChange = (event) => {
-    setSwitchOn(event.target.checked);
-
-    // スイッチが ON になったとき、Dialog を開く
-    if (event.target.checked) {
-      setOpen(true);
-    }
-  };
-
-  // 「はい」ボタンが押されたときのハンドラ
-  const handleYesClick = () => {
-    setOpen(false);
-  };
-
-  // 「いいえ」ボタンが押されたときのハンドラ
-  const handleNoClick = () => {
-    setOpen(false);
-    setSwitchOn(false);  // スイッチを OFF に戻す
-  };
+  
+    // 各スイッチの状態を管理するための state
+    const [isMouseSwitchOn, setMouseSwitchOn] = useState(false);
+    const [isKeyboardSwitchOn, setKeyboardSwitchOn] = useState(false);
+    const [isMotionSwitchOn, setMotionSwitchOn] = useState(false);
+  
+    // Dialog の開閉状態とメッセージを管理するための state
+    const [open, setOpen] = useState(false);
+    const [dialogMessage, setDialogMessage] = useState('');
+  
+    // 開かれたダイアログがどのスイッチに関連しているかを管理するための state
+    const [activeSwitch, setActiveSwitch] = useState(null);
+  
+    // スイッチが切り替えられたときのハンドラ
+    const handleSwitchChange = (event, setSwitch, message, switchName) => {
+      setSwitch(event.target.checked);
+  
+      // スイッチが ON になったとき、Dialog を開く
+      if (event.target.checked) {
+        setDialogMessage(message);
+        setActiveSwitch(switchName);
+        setOpen(true);
+      }
+    };
+  
+    // 「はい」ボタンが押されたときのハンドラ
+    const handleYesClick = () => {
+      setOpen(false);
+    };
+  
+    // 「いいえ」ボタンが押されたときのハンドラ
+    const handleNoClick = () => {
+      setOpen(false);
+      // 「いいえ」ボタンが押されたボタンのみをOFFに戻す
+      if (activeSwitch === 'mouse') {
+        setMouseSwitchOn(false);
+      } else if (activeSwitch === 'keyboard') {
+        setKeyboardSwitchOn(false);
+      } else if (activeSwitch === 'motion') {
+        setMotionSwitchOn(false);
+      }
+    };
+  
 
     return (
       <Box className="Homebody">
@@ -172,7 +200,7 @@ function Control() {
             </Grid>
             <Grid item xs={4} sx={styles.togglebuttonPosition}>
                 <Typography  sx={styles.label}>OFF</Typography>
-                <FormControlLabel control={<Switch checked={isSwitchOn} onChange={handleSwitchChange} />}/> 
+                <FormControlLabel control={<Switch checked={isMouseSwitchOn} onChange={(e) => handleSwitchChange(e, setMouseSwitchOn, 'Mouse switch message', 'mouse')} />}/> 
                 <Typography  sx={styles.label}>ON</Typography>
             </Grid>
             <Grid item xs={3} sx={styles.iconPosition}>
@@ -183,7 +211,7 @@ function Control() {
             </Grid>
             <Grid item xs={4} sx={styles.togglebuttonPosition}>
               <Typography  sx={styles.label}>OFF</Typography>
-                <FormControlLabel control={<Switch />}/> 
+                <FormControlLabel control={<Switch checked={isKeyboardSwitchOn} onChange={(e) => handleSwitchChange(e, setKeyboardSwitchOn, 'Keyboard switch message', 'keyboard')} />}/> 
                 <Typography  sx={styles.label}>ON</Typography>
             </Grid>
             <Grid item xs={3} sx={styles.iconPosition}>
@@ -195,7 +223,7 @@ function Control() {
               </Typography>
             </Grid>
             <Grid item xs={4} sx={styles.togglebuttonPosition}><Typography  sx={styles.label}>OFF</Typography>
-                    <FormControlLabel control={<Switch />}/> 
+                    <FormControlLabel control={<Switch checked={isMotionSwitchOn} onChange={(e) => handleSwitchChange(e, setMotionSwitchOn, 'Motion switch message', 'motion')}  />}/> 
                     <Typography  sx={styles.label}>ON</Typography></Grid>
             </Grid>
             <Box sx={{ display: 'flex', flexDirection: 'row'}} >
@@ -211,30 +239,41 @@ function Control() {
               </Grid>
             </Box>
             <Dialog open={open} onClose={handleNoClick}>
-        <DialogTitle>{"注意"}</DialogTitle>
-        <DialogContent>
-          <Typography>設定の注意事項がここに表示されます。</Typography>
-        </DialogContent>
-        <DialogActions>
-          <Button onClick={handleYesClick} color="primary">
-            はい
-          </Button>
-          <Button onClick={handleNoClick} color="primary">
-            いいえ
-          </Button>
-        </DialogActions>
+
+              <DialogTitle>{"注意"}</DialogTitle>
+
+              <DialogContent>
+                <Typography>{dialogMessage}</Typography>
+              </DialogContent>
+
+              <DialogActions>
+                <Button onClick={handleYesClick} color="primary">
+                  はい
+                </Button>
+                <Button onClick={handleNoClick} color="primary">
+                  いいえ
+                </Button>
+              </DialogActions>
       </Dialog>
         </Box>
         <Box sx={styles.buttonPosition}>
           <Grid item xs={6}>
-            <Link to="/"><Button size="large"  variant="outlined" sx={styles.secondbutton}>
-            <ChevronLeftIcon sx={{margin:'0 0.5rem 0 0', padding:"0"}}/>Back
+            <Link to="/"><Button size="large" variant="outlined" sx={styles.secondbutton}>
+              <ChevronLeftIcon sx={{margin:'0 0.5rem 0 0', padding:"0"}}/>Back
             </Button></Link>
           </Grid>
           <Grid item xs={6} sx={{ display: 'flex', justifyContent: 'flex-end' }}>
-            <Link to="/"><Button size="large" sx={styles.primebutton}>
-              Next<ChevronRightIcon sx={{margin:'0 0 0 0.5rem', padding:"0"}}/>
-            </Button></Link>
+            { (isMouseSwitchOn || isKeyboardSwitchOn || isMotionSwitchOn) ? (
+              <Link to="/">
+                <Button size="large" sx={styles.primebuttonactive}>
+                  Next<ChevronRightIcon sx={{margin:'0 0 0 0.5rem', padding:"0"}}/>
+                </Button>
+              </Link>
+            ) : (
+              <Button size="large" sx={styles.primebuttondisabled} disabled>
+                Next<ChevronRightIcon sx={{margin:'0 0 0 0.5rem', padding:"0"}}/>
+              </Button>
+            )}
           </Grid>
         </Box>
       </Box>
