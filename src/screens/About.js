@@ -79,11 +79,11 @@ function About() {
               <Typography sx={{fontSize: '1.5rem',fontFamily: 'Segoe UI',}}>Set up, dive into fun!<br /> <br />
               With MotionInput, by waving or jumping,<br />you can explore a new world of gaming!
               </Typography>
-              <Box sx={{position: 'absolute', right: '14.5rem', bottom: '0.3rem'}}>
-              <img src={uclLogo} alt="logo" style={{height:'1.5rem',width:'5rem',margin:'0 0'}}/>
+              <Box sx={{position: 'absolute', right: '11.5rem', bottom: '0.2rem'}}>
+              <img src={uclLogo} alt="logo" style={{height:'1.2rem',width:'4rem',margin:'0 0'}}/>
               </Box>
-              <Box sx={{position: 'absolute', right: 0, bottom: 0}}>
-              <img src={logo} alt="logo" style={{height:'2rem',width:'14.5rem',margin:'0 0'}}/>
+              <Box sx={{position: 'absolute', right: "0.5rem", bottom: 0}}>
+              <img src={logo} alt="logo" style={{height:'1.5rem',width:'10.5rem',margin:'0 0'}}/>
               </Box>
           </Grid>
         </Box>

@@ -27,12 +27,9 @@ function WhatISMotionInput() {
   export default WhatISMotionInput;
 
   const styles = {
-    menuIcon: {
-      fontSize: '3rem', 
-      margin: '0 0.5rem 0 0',
-    },
+
     menuItem: {
-      fontSize: '2.7rem',
+      fontSize: '2.5rem',
       fontFamily: 'Segoe UI',
       display: 'flex',
       alignItems: 'center',
@@ -69,7 +66,7 @@ function WhatISMotionInput() {
     return (
       <Box className="Homebody">
         <Typography sx={styles.menuItem}>
-          <InfoOutlinedIcon sx={styles.menuIcon} />About
+            What is MotionInput ?
         </Typography>
         <Box className="textbox" sx={{ display: 'flex',flexDirection: 'row'}}>
           <Grid item xs={6} sx={{ display: 'flex',flexDirection: 'row', justifyContent: 'center', alignItems: 'center'}}>
