@@ -232,12 +232,13 @@ function Control() {
               <Grid item xs={3}>
               </Grid>
               <Grid item xs={5}>
-              <Button style={{textTransform: 'none'}}>
+              <Link to="/WhatIsMotionInput"><Button style={{textTransform: 'none'}}>
                 <Typography sx={styles.helpPosition}>
                   <HelpOutlineOutlinedIcon/> 
                   What is MotionInput ?
                 </Typography>
               </Button>
+              </Link>
               </Grid>
               <Grid item xs={4}>
               </Grid>
