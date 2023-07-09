@@ -200,7 +200,7 @@ function Control() {
             </Grid>
             <Grid item xs={4} sx={styles.togglebuttonPosition}>
                 <Typography  sx={styles.label}>OFF</Typography>
-                <FormControlLabel control={<Switch checked={isMouseSwitchOn} onChange={(e) => handleSwitchChange(e, setMouseSwitchOn, 'Mouse switch message', 'mouse')} />}/> 
+                <FormControlLabel control={<Switch checked={isMouseSwitchOn} onChange={(e) => handleSwitchChange(e, setMouseSwitchOn, <MouseInstruction/>, 'mouse')} />}/> 
                 <Typography  sx={styles.label}>ON</Typography>
             </Grid>
             <Grid item xs={3} sx={styles.iconPosition}>
@@ -239,20 +239,22 @@ function Control() {
               </Grid>
             </Box>
             <Dialog open={open} onClose={handleNoClick}>
-
-              <DialogTitle>{"注意"}</DialogTitle>
-
-              <DialogContent>
+              <DialogContent sx={{padding:"1rem 1rem 0.5rem 1rem"}}>
                 <Typography>{dialogMessage}</Typography>
               </DialogContent>
-
-              <DialogActions>
-                <Button onClick={handleYesClick} color="primary">
-                  はい
-                </Button>
-                <Button onClick={handleNoClick} color="primary">
-                  いいえ
-                </Button>
+              <DialogActions sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center'}}>
+                < Box sx={{ display: 'flex', flexDirection: 'column'}}>
+                  <Box sx={{margin:"0 0 0.5rem 0"}}>
+                    <Button onClick={handleYesClick} size="large" sx={styles.primebuttonactive}>
+                    Yes
+                    </Button>
+                  </Box>
+                  <Box sx={{margin:"0.5rem 0"}}>
+                    <Button onClick={handleNoClick} size="large" variant="outlined" sx={styles.secondbutton}>
+                      No
+                    </Button>
+                  </Box>
+                </Box>
               </DialogActions>
       </Dialog>
         </Box>
@@ -278,4 +280,25 @@ function Control() {
         </Box>
       </Box>
     );
+}
+
+function MouseInstruction() {
+  return (
+    <Box sx={{width:'35rem'}}>
+      <Typography sx={{ display: 'flex',flexDirection: 'row', justifyContent: 'center',fontSize: '2rem',fontFamily: 'Segoe UI'}} >
+      Right-click and the bird jumps
+      </Typography>
+      <Box  sx={{display: 'flex',flexDirection: 'row'}}>
+          <Grid item xs={6} sx={{ display: 'flex',flexDirection: 'row', justifyContent: 'center', alignItems: 'center'}}>
+            test left
+          </Grid>
+          <Grid item xs={6} sx={{ position: 'relative', display: 'flex',flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
+            test right
+          </Grid>
+      </Box>
+      <Typography sx={{ display: 'flex',flexDirection: 'row', justifyContent: 'center',fontSize: '1.5rem',fontFamily: 'Segoe UI'}} >
+        Do you use  Mouse?
+      </Typography>
+    </Box>
+  );
 }
