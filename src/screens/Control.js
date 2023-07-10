@@ -271,7 +271,7 @@ function Control() {
           </Grid>
           <Grid item xs={6} sx={{ display: 'flex', justifyContent: 'flex-end' }}>
             { (isMouseSwitchOn || isKeyboardSwitchOn || isMotionSwitchOn) ? (
-              <Link to="/">
+              <Link to="/Start">
                 <Button size="large" sx={styles.primebuttonactive}>
                   Next<ChevronRightIcon sx={{margin:'0 0 0 0.5rem', padding:"0"}}/>
                 </Button>

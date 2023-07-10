@@ -6,7 +6,7 @@ import uclLogo from '../components/ucl_logo.svg';
 import logo from '../components/logo.png';
 import './About.css';
 import { Box,Grid,Typography,Button} from '@mui/material';
-import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
+import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import {Link} from 'react-router-dom';
 
@@ -40,7 +40,18 @@ function WhatISMotionInput() {
       fontFamily: 'Segoe UI',
       margin:"0.5rem 0.5rem"
     },
-
+    secondbutton:{
+        backgroundColor:"white",
+        color:"black",
+        textTransform: "none",
+        borderColor:"black",
+        borderRadius:'1rem',
+        margin:'0 0 0 0rem',
+        fontSize: '1.5rem', 
+        padding: '1rem', 
+        height: '3rem',  
+        width: '8rem'  
+      }, 
     buttonPosition:{
       width: "35rem",
       display: 'flex', 
@@ -87,11 +98,12 @@ function WhatISMotionInput() {
         
         <Box sx={styles.buttonPosition}>
           <Grid item xs={6}>
-          </Grid>
-          <Grid item xs={6} sx={{ display: 'flex', justifyContent: 'flex-end' }}>
-            <Link to="/Control"><Button size="large" sx={styles.primebutton}>
-              Next<ChevronRightIcon sx={{margin:'0 0 0 0.5rem', padding:"0"}}/>
-            </Button></Link>
+                <Grid item xs={6}>
+                    <Link to="/Control">
+                        <Button size="large" variant="outlined" sx={styles.secondbutton}>
+                            <ChevronLeftIcon sx={{margin:'0 0.5rem 0 0', padding:"0"}}/>Back
+                        </Button></Link>
+                </Grid>
           </Grid>
         </Box>
       </Box>
