@@ -15,20 +15,19 @@ import MouseOutlinedIcon from '@mui/icons-material/MouseOutlined';
 import KeyboardOutlinedIcon from '@mui/icons-material/KeyboardOutlined';
 import SportsMartialArtsOutlinedIcon from '@mui/icons-material/SportsMartialArtsOutlined';
 import HelpOutlineOutlinedIcon from '@mui/icons-material/HelpOutlineOutlined';
-import DirectionsRunOutlinedIcon from '@mui/icons-material/DirectionsRunOutlined';
 import MouseInsructionGif from '../components/mouseInstruction.gif';
 import KeyboardInsructionGif from '../components/keyboardInstruction.gif';
 import MotionInputInsructionGif from '../components/motionInputInstruction.gif';
 
 
 function Control() {
-  
+
     return (
       <div>
         <Header/>
         <Grid container item xs={12}>
           <Grid item xs={3}><SideMenu_Step2/></Grid>
-          <Grid item xs={9}><HomeBody/></Grid>
+          <Grid item xs={9}><HomeBody /></Grid>
         </Grid>
       </div> 
     );
@@ -146,7 +145,7 @@ function Control() {
       }
   };
 
-  function HomeBody() {
+  function HomeBody(props) {
   
     // 各スイッチの状態を管理するための state
     const [isMouseSwitchOn, setMouseSwitchOn] = useState(false);
@@ -280,12 +279,20 @@ function Control() {
           </Grid>
           <Grid item xs={6} sx={{ display: 'flex', justifyContent: 'flex-end' }}>
             { (isMouseSwitchOn || isKeyboardSwitchOn || isMotionSwitchOn) ? (
+              (isMouseSwitchOn || isKeyboardSwitchOn) ? (
               <Link to="/Start">
                 <Button size="large" sx={styles.primebuttonactive}>
                   Next<ChevronRightIcon sx={{margin:'0 0 0 0.5rem', padding:"0"}}/>
                 </Button>
               </Link>
             ) : (
+              <Link to="/StartMotionInput">
+                <Button size="large" sx={styles.primebuttonactive}>
+                  Next<ChevronRightIcon sx={{margin:'0 0 0 0.5rem', padding:"0"}}/>
+                </Button>
+              </Link>
+               )
+               ) : (
               <Button size="large" sx={styles.primebuttondisabled} disabled>
                 Next<ChevronRightIcon sx={{margin:'0 0 0 0.5rem', padding:"0"}}/>
               </Button>
@@ -344,18 +351,3 @@ function MotionInputInstruction() {
   );
 }
 
-function WhatIsMotionInput() {
-  return (
-    <Box sx={{width:'35rem'}}>
-      <Typography sx={{ display: 'flex',flexDirection: 'row', justifyContent: 'center',fontSize: '1.5rem',fontFamily: 'Segoe UI'}} >
-      What is MotionInput
-      </Typography>
-      <Box  sx={{display: 'flex',flexDirection: 'row',justifyContent: 'center',margin:'1rem 0'}}>
-        <img src={MotionInputInsructionGif} alt="gif"/>
-      </Box>
-      <Typography sx={{ display: 'flex',flexDirection: 'row', justifyContent: 'center',fontSize: '1.5rem',fontFamily: 'Segoe UI'}} >
-        Do you use  MotionInput?
-      </Typography>
-    </Box>
-  );
-}
