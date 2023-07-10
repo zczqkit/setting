@@ -50,7 +50,12 @@ function WhatISMotionInput() {
         fontSize: '1.5rem', 
         padding: '1rem', 
         height: '3rem',  
-        width: '8rem'  
+        width: '8rem',
+        '&:hover': {
+            borderColor:"#5B5FC7",
+            color:"#5B5FC7",
+            backgroundColor: 'white',
+          },  
       }, 
     buttonPosition:{
       width: "35rem",

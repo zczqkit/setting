@@ -5,15 +5,7 @@ import './StartGame.css';
 import { Box,Grid,Typography,Button} from '@mui/material';
 import {Link} from 'react-router-dom';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
-import SportsEsportsOutlinedIcon from '@mui/icons-material/SportsEsportsOutlined';
-import MouseOutlinedIcon from '@mui/icons-material/MouseOutlined';
-import KeyboardOutlinedIcon from '@mui/icons-material/KeyboardOutlined';
-import SportsMartialArtsOutlinedIcon from '@mui/icons-material/SportsMartialArtsOutlined';
-import HelpOutlineOutlinedIcon from '@mui/icons-material/HelpOutlineOutlined';
-import DirectionsRunOutlinedIcon from '@mui/icons-material/DirectionsRunOutlined';
-import MouseInsructionGif from '../components/mouseInstruction.gif';
-import KeyboardInsructionGif from '../components/keyboardInstruction.gif';
-import MotionInputInsructionGif from '../components/motionInputInstruction.gif';
+
 
 
 function StartGame() {
@@ -65,7 +57,12 @@ function StartGame() {
         fontSize: '1.5rem', 
         padding: '1rem', 
         height: '3rem',  
-        width: '8rem'  
+        width: '8rem',
+        '&:hover': {
+          borderColor:"#5B5FC7",
+          color:"#5B5FC7",
+          backgroundColor: 'white',
+        },  
       }, 
   };
 

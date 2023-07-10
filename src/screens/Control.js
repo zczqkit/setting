@@ -46,14 +46,13 @@ function Control() {
       fontFamily: 'Segoe UI',
       display: 'flex',
       alignItems: 'center',
-      margin: '0 0 1rem 0',
+      margin: '2rem 0 2rem 0',
     },
     menuText: {
         fontSize: '2rem',
         fontFamily: 'Segoe UI',
         display: 'flex',
         alignItems: 'center',
-        margin: '0 0 0.5rem 0',
       },
     iconPosition:{
       display: 'flex',
@@ -106,7 +105,10 @@ function Control() {
       fontSize: '1.5rem', 
       padding: '1rem', 
       height: '3rem',  
-      width: '8rem'  
+      width: '8rem',
+      '&:hover': {
+        backgroundColor: '#464775',
+      },
     },
     primebuttondisabled:{
       backgroundColor:"white",
@@ -129,7 +131,12 @@ function Control() {
       fontSize: '1.5rem', 
       padding: '1rem', 
       height: '3rem',  
-      width: '8rem'  
+      width: '8rem',
+      '&:hover': {
+        borderColor:"#5B5FC7",
+        color:"#5B5FC7",
+        backgroundColor: 'white',
+      },
     },
     helpPosition:{
       display: 'flex',
@@ -189,10 +196,12 @@ function Control() {
         <Typography sx={styles.menuItem}>
           <SportsEsportsOutlinedIcon  sx={styles.icon} />Control
         </Typography>
-        <Typography sx={styles.menuText}>
-          How to play ?
-        </Typography>
         <Box className="textbox" sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-around'}}  >
+          <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'center'}}>
+            <Typography sx={styles.menuText}>
+            How to play ?
+            </Typography>
+          </Box>
           <Grid container item xs={12} >
             <Grid item xs={3} sx={styles.iconPosition}>
                 <MouseOutlinedIcon sx={styles.menuIcon} />
@@ -294,7 +303,7 @@ function MouseInstruction() {
       Right-click and the bird jumps
       </Typography>
       <Box  sx={{display: 'flex',flexDirection: 'row',justifyContent: 'center',margin:'1rem 0'}}>
-        <img src={MouseInsructionGif} alt="gif"/>
+        <img src={MouseInsructionGif} alt="gif"style={{width: "50%"}}/>
       </Box>
       <Typography sx={{ display: 'flex',flexDirection: 'row', justifyContent: 'center',fontSize: '1.5rem',fontFamily: 'Segoe UI'}} >
         Do you use  Mouse?
@@ -310,7 +319,7 @@ function KeyboardInstruction() {
       Click on space bottom and the bird jumps
       </Typography>
       <Box  sx={{display: 'flex',flexDirection: 'row',justifyContent: 'center',margin:'1rem 0'}}>
-        <img src={KeyboardInsructionGif} alt="gif"/>
+        <img src={KeyboardInsructionGif} alt="gif" style={{width: "50%"}}/>
       </Box>
       <Typography sx={{ display: 'flex',flexDirection: 'row', justifyContent: 'center',fontSize: '1.5rem',fontFamily: 'Segoe UI'}} >
         Do you use  Keyboard?
@@ -326,7 +335,7 @@ function MotionInputInstruction() {
       Move your arms up and down and the bird jumps
       </Typography>
       <Box  sx={{display: 'flex',flexDirection: 'row',justifyContent: 'center',margin:'1rem 0'}}>
-        <img src={MotionInputInsructionGif} alt="gif"/>
+        <img src={MotionInputInsructionGif} alt="gif" style={{width: "50%"}} />
       </Box>
       <Typography sx={{ display: 'flex',flexDirection: 'row', justifyContent: 'center',fontSize: '1.5rem',fontFamily: 'Segoe UI'}} >
         Do you use  MotionInput?

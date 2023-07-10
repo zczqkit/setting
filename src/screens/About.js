@@ -36,7 +36,7 @@ function About() {
       fontFamily: 'Segoe UI',
       display: 'flex',
       alignItems: 'center',
-      margin: '0 0 4.5rem 0',
+      margin: '2rem 0 2rem 0',
     },
     description: {
       fontSize: '1.5rem',
@@ -59,7 +59,10 @@ function About() {
       fontSize: '1.5rem', 
       padding: '1rem', 
       height: '3rem',  
-      width: '8rem'  
+      width: '8rem',  
+      '&:hover': {
+        backgroundColor: '#464775',
+      },
     },
   };
 
@@ -77,12 +80,12 @@ function About() {
           </Grid>
           <Grid item xs={6} sx={{ position: 'relative', display: 'flex',flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
               <Typography sx={{fontSize: '1.5rem',fontFamily: 'Segoe UI',}}>Set up, dive into fun!<br /> <br />
-              With MotionInput, by waving or jumping,<br />you can explore a new world of gaming!
+              With MotionInput, by waving or jumping,<br />you can explore a new world of gaming!<br /><br />
               </Typography>
-              <Box sx={{position: 'absolute', right: '11.5rem', bottom: '0.2rem'}}>
+              <Box sx={{position: 'absolute', right: '11.5rem', bottom: '1.7rem'}}>
               <img src={uclLogo} alt="logo" style={{height:'1.2rem',width:'4rem',margin:'0 0'}}/>
               </Box>
-              <Box sx={{position: 'absolute', right: "0.5rem", bottom: 0}}>
+              <Box sx={{position: 'absolute', right: "0.5rem", bottom: '1.5rem'}}>
               <img src={logo} alt="logo" style={{height:'1.5rem',width:'10.5rem',margin:'0 0'}}/>
               </Box>
           </Grid>
