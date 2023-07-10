@@ -2,6 +2,7 @@ import React from 'react';
 import Header from '../components/Header';
 import SideMenu_Step2 from '../components/SideMenu_Step2';
 import motionInputLogo from '../components/motioninput.jpg';
+import motionInput from '../components/motionInput.gif';
 import uclLogo from '../components/ucl_logo.svg';
 import logo from '../components/logo.png';
 import './About.css';
@@ -33,7 +34,7 @@ function WhatISMotionInput() {
       fontFamily: 'Segoe UI',
       display: 'flex',
       alignItems: 'center',
-      margin: '0 0 4.5rem 0',
+      margin: '2rem 0 2rem 0',
     },
     description: {
       fontSize: '1.5rem',
@@ -60,8 +61,8 @@ function WhatISMotionInput() {
     buttonPosition:{
       width: "35rem",
       display: 'flex', 
-      flexDirection: 'row' , 
-      marginTop:"2rem"
+      flexDirection: 'row' ,
+      marginTop:"2rem", 
       },
     primebutton:{
       backgroundColor:"#5B5FC7",
@@ -69,10 +70,13 @@ function WhatISMotionInput() {
       textTransform: "none",
       borderRadius:'1rem',
       margin:'0 0 0 0rem',
-      fontSize: '1.5rem', 
+      fontSize: '1rem', 
       padding: '1rem', 
       height: '3rem',  
-      width: '8rem'  
+      width: '12rem',
+      '&:hover': {
+        backgroundColor: '#464775',
+      },
     },
   };
 
@@ -86,18 +90,14 @@ function WhatISMotionInput() {
         </Typography>
         <Box className="textbox" sx={{ display: 'flex',flexDirection: 'row'}}>
           <Grid item xs={6} sx={{ display: 'flex',flexDirection: 'row', justifyContent: 'center', alignItems: 'center'}}>
-          <img src={motionInputLogo} alt="logo" className="logo"style={{height:'15rem',width:'15rem'}}/>
+          <img src={motionInputLogo} alt="logo" className="logo" style={{height:'15rem',width:'15rem'}}/>
           </Grid>
           <Grid item xs={6} sx={{ position: 'relative', display: 'flex',flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
-              <Typography sx={{fontSize: '1.5rem',fontFamily: 'Segoe UI',}}>Set up, dive into fun!<br /> <br />
-              With MotionInput, by waving or jumping,<br />you can explore a new world of gaming!
+              <Typography sx={{fontSize: '1.3rem',fontFamily: 'Segoe UI',}}>Play games by moving! <br /><br />With MotionInput, moving brings games to life for an exciting,<br /> immersive experience like never before!<br /> <br />
               </Typography>
-              <Box sx={{position: 'absolute', right: '14.5rem', bottom: '0.3rem'}}>
-              <img src={uclLogo} alt="logo" style={{height:'1.5rem',width:'5rem',margin:'0 0'}}/>
-              </Box>
-              <Box sx={{position: 'absolute', right: 0, bottom: 0}}>
-              <img src={logo} alt="logo" style={{height:'2rem',width:'14.5rem',margin:'0 0'}}/>
-              </Box>
+              <Button size="large" sx={styles.primebutton}>
+              Download Now
+              </Button>
           </Grid>
         </Box>
         
