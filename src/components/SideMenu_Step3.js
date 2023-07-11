@@ -46,7 +46,7 @@ function Sidemenu() {
           <InfoOutlinedIcon sx={styles.menuIcon} />About
         </Typography>
         <Typography sx={styles.menuItem}>
-          <SportsEsportsOutlinedIcon sx={styles.menuIcon} />Contorl
+          <SportsEsportsOutlinedIcon sx={styles.menuIcon} />Control
         </Typography>
         <Typography sx={styles.menuItem}>
           <PlayCircleOutlineOutlinedIcon sx={styles.menuIcon} />Start

@@ -1,13 +1,12 @@
 import React,{ useState }from 'react';
 import Header from '../components/Header';
 import SideMenu_Step2 from '../components/SideMenu_Step2';
-import Switches from '../components/Switches';
 import './Control.css';
 import {Link} from 'react-router-dom';
 import Dialog from '@mui/material/Dialog';
 import DialogContent from '@mui/material/DialogContent';
 import DialogActions from '@mui/material/DialogActions';
-import { Box,Grid,Typography,Button,Switch,FormControl,FormControlLabel} from '@mui/material';
+import { Box,Grid,Typography,Button,Switch,FormControlLabel} from '@mui/material';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import SportsEsportsOutlinedIcon from '@mui/icons-material/SportsEsportsOutlined';
@@ -198,7 +197,7 @@ function Control() {
         <Box className="textbox" sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-around'}}  >
           <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'center'}}>
             <Typography sx={styles.menuText}>
-            How to play ?
+            How to play?
             </Typography>
           </Box>
           <Grid container item xs={12} >
@@ -323,7 +322,7 @@ function KeyboardInstruction() {
   return (
     <Box sx={{width:'35rem'}}>
       <Typography sx={{ display: 'flex',flexDirection: 'row', justifyContent: 'center',fontSize: '1.5rem',fontFamily: 'Segoe UI'}} >
-      Click on space bottom and the bird jumps
+      Click on the space button, and the bird jumps
       </Typography>
       <Box  sx={{display: 'flex',flexDirection: 'row',justifyContent: 'center',margin:'1rem 0'}}>
         <img src={KeyboardInsructionGif} alt="gif" style={{width: "50%"}}/>
@@ -339,7 +338,7 @@ function MotionInputInstruction() {
   return (
     <Box sx={{width:'35rem'}}>
       <Typography sx={{ display: 'flex',flexDirection: 'row', justifyContent: 'center',fontSize: '1.5rem',fontFamily: 'Segoe UI'}} >
-      Move your arms up and down and the bird jumps
+      Move your arms up and down, and the bird jumps
       </Typography>
       <Box  sx={{display: 'flex',flexDirection: 'row',justifyContent: 'center',margin:'1rem 0'}}>
         <img src={MotionInputInsructionGif} alt="gif" style={{width: "50%"}} />

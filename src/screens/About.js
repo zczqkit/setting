@@ -66,8 +66,6 @@ function About() {
     },
   };
 
-  // <img src={logo} alt="logo" className="logo"/>
-
   function HomeBody() {
     return (
       <Box className="Homebody">
@@ -79,8 +77,10 @@ function About() {
           <img src={motionInputLogo} alt="logo" className="logo"style={{height:'15rem',width:'15rem'}}/>
           </Grid>
           <Grid item xs={6} sx={{ position: 'relative', display: 'flex',flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
-              <Typography sx={{fontSize: '1.5rem',fontFamily: 'Segoe UI',}}>Set up, dive into fun!<br /> <br />
-              With MotionInput, by waving or jumping,<br />you can explore a new world of gaming!<br /><br />
+              <Typography sx={{fontSize: '1.5rem',fontFamily: 'Segoe UI',}}>
+                Set up, dive into fun!<br /> <br />
+                With MotionInput, by waving or jumping,<br />
+                you can explore a new world of gaming!<br /><br />
               </Typography>
               <Box sx={{position: 'absolute', right: '11.5rem', bottom: '1.7rem'}}>
               <img src={uclLogo} alt="logo" style={{height:'1.2rem',width:'4rem',margin:'0 0'}}/>

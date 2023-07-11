@@ -2,13 +2,9 @@ import React from 'react';
 import Header from '../components/Header';
 import SideMenu_Step2 from '../components/SideMenu_Step2';
 import motionInputLogo from '../components/motioninput.jpg';
-import motionInput from '../components/motionInput.gif';
-import uclLogo from '../components/ucl_logo.svg';
-import logo from '../components/logo.png';
 import './About.css';
 import { Box,Grid,Typography,Button} from '@mui/material';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
-import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import {Link} from 'react-router-dom';
 
 
