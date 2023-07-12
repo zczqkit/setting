@@ -1,7 +1,6 @@
 import React from 'react';
 import Header from '../components/Header';
 import SideMenu_Step3 from '../components/SideMenu_Step3';
-import './StartGameMotionInput.css';
 import goodplayexample from '../components/goodplayexample.png';
 import badplayexample from '../components/badplayexample.png';
 import { Box,Grid,Typography,Button} from '@mui/material';
@@ -29,10 +28,26 @@ function StartGameMotionInput() {
   export default StartGameMotionInput;
 
   const styles = {
+    homeBody:{
+      display:'flex',
+      flexDirection:'column',
+      alignItems:'center',
+      height: '100vh',
+    },
+
     menuIcon: {
       fontSize: '3rem', 
       margin: '0 0.5rem 0 0',
     },
+
+    textBox:{
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      height:'25rem',
+      width:'35rem',
+    },
+
     menuItem: {
       fontSize: '2.7rem',
       fontFamily: 'Segoe UI',
@@ -40,18 +55,21 @@ function StartGameMotionInput() {
       alignItems: 'center',
       margin: '2rem 0 2rem 0',
     },
+
     description: {
       fontSize: '1.5rem',
       fontFamily: 'Segoe UI',
       margin:"0.5rem 0.5rem"
     },
+
     buttonPosition:{
       width: "35rem",
       display: 'flex', 
       flexDirection: 'row' , 
       justifyContent: 'center', 
-      margin:"3rem 0"  
+      margin:"2rem 0"  
       },
+
       primebutton:{
         backgroundColor:"#5B5FC7",
         color:"white",
@@ -66,6 +84,7 @@ function StartGameMotionInput() {
           backgroundColor: '#464775',
         },
       },
+
       secondbutton:{
         backgroundColor:"white",
         color:"black",
@@ -87,11 +106,11 @@ function StartGameMotionInput() {
 
   function HomeBody(props) {
     return (
-      <Box className="Homebody">
+      <Box sx={styles.homeBody}>
         <Typography sx={styles.menuItem}>
         <PlayCircleOutlineOutlinedIcon sx={styles.menuIcon} />Start
         </Typography>
-       <Box className="textbox" sx={{ display: 'flex',flexDirection: 'column',alignItems: 'center'}}>
+       <Box sx={styles.textBox}>
        <Typography sx={styles.description}>
         Play and show whole body on the screen
        </Typography>

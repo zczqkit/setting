@@ -1,7 +1,6 @@
 import React from 'react';
 import Header from '../components/Header';
 import SideMenu_Step3 from '../components/SideMenu_Step3';
-import './StartGame.css';
 import logo from '../components/flappy-bird-logo.png';
 import { Box,Grid,Typography,Button} from '@mui/material';
 import {Link} from 'react-router-dom';
@@ -26,6 +25,12 @@ function StartGame(props) {
   export default StartGame;
 
   const styles = {
+    homeBody:{
+      display:'flex',
+      flexDirection:'column',
+      alignItems:'center',
+      height: '100vh',
+    },
     menuIcon: {
       fontSize: '3rem', 
       margin: '0 0.5rem 0 0',
@@ -85,7 +90,7 @@ function StartGame(props) {
 
   function HomeBody(props) {
     return (
-      <Box className="Homebody">
+      <Box sx={styles.homeBody}>
         <Typography sx={styles.menuItem}>
         <PlayCircleOutlineOutlinedIcon sx={styles.menuIcon} />Start
         </Typography>

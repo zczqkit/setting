@@ -1,7 +1,6 @@
 import React,{ useState }from 'react';
 import Header from '../components/Header';
 import SideMenu_Step2 from '../components/SideMenu_Step2';
-import './Control.css';
 import {Link} from 'react-router-dom';
 import Dialog from '@mui/material/Dialog';
 import DialogContent from '@mui/material/DialogContent';
@@ -35,10 +34,28 @@ function Control() {
   export default Control;
 
   const styles = {
+    homeBody:{
+      display:'flex',
+      flexDirection:'column',
+      alignItems:'center',
+      height: '100vh',
+    },
+    
     icon: {
       fontSize: '3rem', 
       margin: '0 0.5rem 0 0',
     },
+
+    textBox:{
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'space-around',
+      height:'25rem',
+      width:'35rem',
+      borderRadius: '20px',
+      backgroundColor: '#F5F5F5',
+    },
+
     menuItem: {
       fontSize: '2.7rem',
       fontFamily: 'Segoe UI',
@@ -46,18 +63,21 @@ function Control() {
       alignItems: 'center',
       margin: '2rem 0 2rem 0',
     },
+
     menuText: {
         fontSize: '2rem',
         fontFamily: 'Segoe UI',
         display: 'flex',
         alignItems: 'center',
       },
+
     iconPosition:{
       display: 'flex',
       flexDirection: 'row', 
       justifyContent: 'center', 
       alignItems: 'center',
       },
+
     menuIcon: {
         fontSize: '2.5rem', 
         margin: '0 0 0 0',
@@ -75,6 +95,7 @@ function Control() {
         display: 'flex',
         alignItems: 'center',
     },
+
     label: {
         fontSize: '1rem',
         fontFamily: 'Segoe UI', 
@@ -82,18 +103,21 @@ function Control() {
         alignItems: 'center',
         margin: '0 2rem 0 0',
     },
+
     togglebuttonPosition:{
       display: 'flex',
       flexDirection: 'row', 
       justifyContent: 'center', 
       alignItems: 'center',
       },
+
     buttonPosition:{
       width: "35rem",
       display: 'flex', 
       flexDirection: 'row' , 
       marginTop:"2rem"
       },
+
     primebuttonactive:{
       backgroundColor:"#5B5FC7",
       color:"white",
@@ -108,6 +132,7 @@ function Control() {
         backgroundColor: '#464775',
       },
     },
+
     primebuttondisabled:{
       backgroundColor:"white",
       color:"white",
@@ -136,6 +161,7 @@ function Control() {
         backgroundColor: 'white',
       },
     },
+
     helpPosition:{
       display: 'flex',
       flexDirection: 'row', 
@@ -190,11 +216,11 @@ function Control() {
   
 
     return (
-      <Box className="Homebody">
+      <Box sx={styles.homeBody}>
         <Typography sx={styles.menuItem}>
           <SportsEsportsOutlinedIcon  sx={styles.icon} />Control
         </Typography>
-        <Box className="textbox" sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-around'}}  >
+        <Box sx={styles.textBox}>
           <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'center'}}>
             <Typography sx={styles.menuText}>
             How to play?

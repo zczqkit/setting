@@ -4,7 +4,6 @@ import SideMenu_Step1 from '../components/SideMenu_Step1';
 import motionInputLogo from '../components/motioninput.jpg';
 import uclLogo from '../components/ucl_logo.svg';
 import logo from '../components/logo.png';
-import './About.css';
 import { Box,Grid,Typography,Button} from '@mui/material';
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
@@ -27,17 +26,33 @@ function About() {
   export default About;
 
   const styles = {
+    homeBody:{
+      display:'flex',
+      flexDirection:'column',
+      alignItems:'center',
+      height: '100vh',
+    },
+    
     menuIcon: {
       fontSize: '3rem', 
       margin: '0 0.5rem 0 0',
     },
+
+    textBox:{
+      display: 'flex',
+      flexDirection: 'row',
+      height:'25rem',
+      width:'35rem',
+    },
+
     menuItem: {
       fontSize: '2.7rem',
       fontFamily: 'Segoe UI',
       display: 'flex',
       alignItems: 'center',
-      margin: '2rem 0 2rem 0',
+      margin: '2rem 0 0 0',
     },
+
     description: {
       fontSize: '1.5rem',
       fontFamily: 'Segoe UI',
@@ -48,8 +63,9 @@ function About() {
       width: "35rem",
       display: 'flex', 
       flexDirection: 'row' , 
-      marginTop:"2rem"
+      marginTop:"4rem"
       },
+
     primebutton:{
       backgroundColor:"#5B5FC7",
       color:"white",
@@ -68,11 +84,11 @@ function About() {
 
   function HomeBody() {
     return (
-      <Box className="Homebody">
+      <Box sx={styles.homeBody}>
         <Typography sx={styles.menuItem}>
           <InfoOutlinedIcon sx={styles.menuIcon} />About
         </Typography>
-        <Box className="textbox" sx={{ display: 'flex',flexDirection: 'row'}}>
+        <Box sx={styles.textBox}>
           <Grid item xs={6} sx={{ display: 'flex',flexDirection: 'row', justifyContent: 'center', alignItems: 'center'}}>
           <img src={motionInputLogo} alt="logo" className="logo"style={{height:'15rem',width:'15rem'}}/>
           </Grid>
@@ -82,10 +98,10 @@ function About() {
                 With MotionInput, by waving or jumping,<br />
                 you can explore a new world of gaming!<br /><br />
               </Typography>
-              <Box sx={{position: 'absolute', right: '11.5rem', bottom: '1.7rem'}}>
+              <Box sx={{position: 'absolute', right: '11rem', bottom: '1.7rem'}}>
               <img src={uclLogo} alt="logo" style={{height:'1.2rem',width:'4rem',margin:'0 0'}}/>
               </Box>
-              <Box sx={{position: 'absolute', right: "0.5rem", bottom: '1.5rem'}}>
+              <Box sx={{position: 'absolute', right: "0rem", bottom: '1.5rem'}}>
               <img src={logo} alt="logo" style={{height:'1.5rem',width:'10.5rem',margin:'0 0'}}/>
               </Box>
           </Grid>
