@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from '../components/Header';
-import SideMenu_Step3 from '../components/SideMenu_Step3';
+import SideMenuStep3 from '../components/SideMenuStep3';
 import goodplayexample from '../components/goodplayexample.png';
 import badplayexample from '../components/badplayexample.png';
 import { Box,Grid,Typography,Button} from '@mui/material';
@@ -18,7 +18,7 @@ function StartGameMotionInput() {
       <div>
         <Header/>
         <Grid container item xs={12}>
-          <Grid item xs={3}><SideMenu_Step3/></Grid>
+          <Grid item xs={3}><SideMenuStep3/></Grid>
           <Grid item xs={9}><HomeBody/></Grid>
         </Grid>
       </div> 
@@ -117,11 +117,11 @@ function StartGameMotionInput() {
         <Box sx={{ display: 'flex',flexDirection: 'row'}}>
           <Grid item xs={6} sx={{ display: 'flex',flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
             <CheckCircleOutlineOutlinedIcon sx={{fontSize: '3rem', color:'green',margin:'1rem 0 0 0'}}/>
-            <img src={goodplayexample} style={{height:'10rem',width:'15rem',margin:'1rem 0 2rem 0'}}/>
+            <img src={goodplayexample} alt='logo' style={{height:'10rem',width:'15rem',margin:'1rem 0 2rem 0'}}/>
           </Grid>
           <Grid item xs={6} sx={{ display: 'flex',flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
             <NotInterestedOutlinedIcon  sx={{fontSize: '3rem', color:'red',margin:'1rem 0 0 2rem'} } />
-            <img src={badplayexample} style={{height:'10rem',width:'15rem',margin:'1rem 0 2rem 2rem'}}/>
+            <img src={badplayexample} alt='logo' style={{height:'10rem',width:'15rem',margin:'1rem 0 2rem 2rem'}}/>
           </Grid>
         </Box>
         <Box sx={{ display: 'flex',flexDirection: 'row',justifyContent: 'center', alignItems: 'center'}}>

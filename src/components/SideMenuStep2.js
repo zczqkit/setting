@@ -4,7 +4,6 @@ import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 import PlayCircleOutlineOutlinedIcon from '@mui/icons-material/PlayCircleOutlineOutlined';
 import SportsEsportsOutlinedIcon from '@mui/icons-material/SportsEsportsOutlined';
 import CircleOutlinedIcon from '@mui/icons-material/CircleOutlined';
-import TaskAltOutlinedIcon from '@mui/icons-material/TaskAltOutlined';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 
 const styles = {

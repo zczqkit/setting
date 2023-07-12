@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from '../components/Header';
-import SideMenu_Step2 from '../components/SideMenu_Step2';
+import SideMenuStep2 from '../components/SideMenuStep2';
 import motionInputLogo from '../components/motioninput.jpg';
 import { Box,Grid,Typography,Button} from '@mui/material';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
@@ -13,7 +13,7 @@ function WhatISMotionInput() {
       <div>
         <Header/>
         <Grid container item xs={12}>
-          <Grid item xs={3}><SideMenu_Step2/></Grid>
+          <Grid item xs={3}><SideMenuStep2/></Grid>
           <Grid item xs={9}><HomeBody/></Grid>
         </Grid>
       </div> 

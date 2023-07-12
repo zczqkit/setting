@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from '../components/Header';
-import SideMenu_Step3 from '../components/SideMenu_Step3';
+import SideMenuStep3 from '../components/SideMenuStep3';
 import logo from '../components/flappy-bird-logo.png';
 import { Box,Grid,Typography,Button} from '@mui/material';
 import {Link} from 'react-router-dom';
@@ -15,7 +15,7 @@ function StartGame(props) {
       <div>
         <Header/>
         <Grid container item xs={12}>
-          <Grid item xs={3}><SideMenu_Step3/></Grid>
+          <Grid item xs={3}><SideMenuStep3/></Grid>
           <Grid item xs={9}><HomeBody/></Grid>
         </Grid>
       </div> 

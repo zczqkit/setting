@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from '../components/Header';
-import SideMenu_Step1 from '../components/SideMenu_Step1';
+import SideMenuStep1 from '../components/SideMenuStep1';
 import motionInputLogo from '../components/motioninput.jpg';
 import uclLogo from '../components/ucl_logo.svg';
 import logo from '../components/logo.png';
@@ -16,7 +16,7 @@ function About() {
       <div>
         <Header/>
         <Grid container item xs={12}>
-          <Grid item xs={3}><SideMenu_Step1/></Grid>
+          <Grid item xs={3}><SideMenuStep1/></Grid>
           <Grid item xs={9}><HomeBody/></Grid>
         </Grid>
       </div> 
@@ -71,7 +71,7 @@ function About() {
       color:"white",
       textTransform: "none",
       borderRadius:'1rem',
-      margin:'0 0 0 0rem',
+      margin:' 0 0 0rem',
       fontSize: '1.5rem', 
       padding: '1rem', 
       height: '3rem',  
@@ -86,7 +86,8 @@ function About() {
     return (
       <Box sx={styles.homeBody}>
         <Typography sx={styles.menuItem}>
-          <InfoOutlinedIcon sx={styles.menuIcon} />About
+          <InfoOutlinedIcon sx={styles.menuIcon} />
+          About
         </Typography>
         <Box sx={styles.textBox}>
           <Grid item xs={6} sx={{ display: 'flex',flexDirection: 'row', justifyContent: 'center', alignItems: 'center'}}>
@@ -98,10 +99,10 @@ function About() {
                 With MotionInput, by waving or jumping,<br />
                 you can explore a new world of gaming!<br /><br />
               </Typography>
-              <Box sx={{position: 'absolute', right: '11rem', bottom: '1.7rem'}}>
+              <Box sx={{position: 'absolute', right: '13rem', bottom: '1.7rem'}}>
               <img src={uclLogo} alt="logo" style={{height:'1.2rem',width:'4rem',margin:'0 0'}}/>
               </Box>
-              <Box sx={{position: 'absolute', right: "0rem", bottom: '1.5rem'}}>
+              <Box sx={{position: 'absolute', right: "2rem", bottom: '1.5rem'}}>
               <img src={logo} alt="logo" style={{height:'1.5rem',width:'10.5rem',margin:'0 0'}}/>
               </Box>
           </Grid>

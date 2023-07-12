@@ -1,6 +1,6 @@
 import React,{ useState }from 'react';
 import Header from '../components/Header';
-import SideMenu_Step2 from '../components/SideMenu_Step2';
+import SideMenuStep2 from '../components/SideMenuStep2';
 import {Link} from 'react-router-dom';
 import Dialog from '@mui/material/Dialog';
 import DialogContent from '@mui/material/DialogContent';
@@ -24,7 +24,7 @@ function Control() {
       <div>
         <Header/>
         <Grid container item xs={12}>
-          <Grid item xs={3}><SideMenu_Step2/></Grid>
+          <Grid item xs={3}><SideMenuStep2/></Grid>
           <Grid item xs={9}><HomeBody /></Grid>
         </Grid>
       </div> 
@@ -54,6 +54,7 @@ function Control() {
       width:'35rem',
       borderRadius: '20px',
       backgroundColor: '#F5F5F5',
+      position: 'relative', 
     },
 
     menuItem: {
@@ -86,7 +87,7 @@ function Control() {
     textPosition:{
         display: 'flex',
         flexDirection: 'row',  
-        alignItems: 'center'
+        alignItems: 'center',
       },  
 
     description: {
@@ -161,12 +162,13 @@ function Control() {
         backgroundColor: 'white',
       },
     },
-
+    
     helpPosition:{
       display: 'flex',
       flexDirection: 'row', 
       alignItems: 'center',
       margin:'0 0 0.5rem 0',
+      fontSize: '0.8rem',
       }
   };
 
@@ -261,20 +263,15 @@ function Control() {
                     <FormControlLabel control={<Switch checked={isMotionSwitchOn} onChange={(e) => handleSwitchChange(e, setMotionSwitchOn, <MotionInputInstruction/>, 'motion')}  />}/> 
                     <Typography  sx={styles.label}>ON</Typography></Grid>
             </Grid>
-            <Box sx={{ display: 'flex', flexDirection: 'row'}} >
-              <Grid item xs={3}>
-              </Grid>
-              <Grid item xs={5}>
-              <Link to="/WhatIsMotionInput"><Button style={{textTransform: 'none'}}>
-                <Typography sx={styles.helpPosition}>
-                  <HelpOutlineOutlinedIcon/> 
-                  What is MotionInput ?
-                </Typography>
-              </Button>
-              </Link>
-              </Grid>
-              <Grid item xs={4}>
-              </Grid>
+            <Box sx={{position: 'absolute', left: "7.2rem", bottom: '0.5rem'}}>
+                <Link to="/WhatIsMotionInput">
+                  <Button style={{height: '1.5rem', width: '12rem', textTransform: 'none'}}>
+                    <Typography sx={styles.helpPosition}>
+                      <HelpOutlineOutlinedIcon sx={{height: '1.rem', width: '1rem'}}/> 
+                      What is MotionInput?
+                    </Typography>
+                  </Button>
+                </Link>
             </Box>
             <Dialog open={open} onClose={handleNoClick}>
               <DialogContent sx={{padding:"1rem 1rem 0.5rem 1rem"}}>
@@ -294,7 +291,7 @@ function Control() {
                   </Box>
                 </Box>
               </DialogActions>
-      </Dialog>
+              </Dialog>
         </Box>
         <Box sx={styles.buttonPosition}>
           <Grid item xs={6}>
